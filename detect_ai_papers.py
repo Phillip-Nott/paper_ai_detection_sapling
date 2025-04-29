@@ -8,7 +8,7 @@ import time
 # === CONFIGURATION ===
 SAPLING_API_KEY = "B9DGKUZUQROHHROD9F4O4CKDLDVQESLZ"  # <-- Replace with your actual API key
 PAPERS_FOLDER = "/mnt/c/Users/philm/Documents/papers"  # <-- Set your actual folder path for papers
-MAX_WORDS = 8000  # Limit text to 8000 words
+#MAX_WORDS = 8000  # Limit text to 8000 words
 DELAY_SECONDS = 3  # Delay to avoid hitting API rate limits
 
 # === Text Extraction Functions ===
@@ -62,10 +62,10 @@ def main():
                 text = extract_text_from_docx(file_path) if filename.endswith(".docx") else extract_text_from_pdf(file_path)
 
                 # Truncate text to the first 8000 words if necessary
-                words = text.split()
-                if len(words) > MAX_WORDS:
-                    words = words[:MAX_WORDS]
-                    text = " ".join(words)
+                #words = text.split()
+                #if len(words) > MAX_WORDS:
+                    #words = words[:MAX_WORDS]
+                    #text = " ".join(words)
 
                 # Check AI score using Sapling API
                 result = check_text_for_ai(text)
